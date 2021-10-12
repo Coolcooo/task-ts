@@ -11,7 +11,7 @@ console.log(
     Array.from('Message of all colors')
         .map((char, i) => {
             const font = colorList[i % colorList.length];
-            return style(char, { font, background: contrast[font] });
+            return style(char, { font, background });
         })
         .join(''),
 );
