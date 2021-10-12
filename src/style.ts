@@ -1,7 +1,7 @@
 import { color, OptionsOfColor } from './colors';
 import { markdown, OptionsOfMarkdown } from './md';
 
-type FullOptions = OptionsOfColor | OptionsOfMarkdown;
+type FullOptions = OptionsOfColor & OptionsOfMarkdown;
 export function style(text: string, options: FullOptions) {
     if (text.length === 0) {
         return text;
