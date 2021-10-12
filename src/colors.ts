@@ -1,5 +1,5 @@
 import { backgroundColors, effects, fontColors, Reset } from './model';
-function addColor(text: string, color: string, isBackground = false) {
+function addColor(text: string, color: string, isBackground: boolean = false) {
     if (isBackground) {
         return text + backgroundColors[color];
     }
@@ -9,16 +9,12 @@ function getEffects(effectList: Array<string>) {
     return effectList.map(effect => effects[effect]).join('');
 }
 
-export type Options = {
+export type OptionsOfColor = {
     font?: string,
     background?: string,
     effects?: Array<string>,
-    bold?: boolean,
-    italic?: boolean,
-    mono?: boolean,
-    link?: string,
 }
-export function color(text: string, options?: Options) {
+export function color(text: string, options?: OptionsOfColor) {
     const preparedText = text.replace(/ё/g, 'е');
     let result = '';
     if (options) {

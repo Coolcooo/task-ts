@@ -1,6 +1,8 @@
-import { color, Options } from './colors';
-import { markdown } from './md';
-export function style(text: string, options: Options) {
+import { color, OptionsOfColor } from './colors';
+import { markdown, OptionsOfMarkdown } from './md';
+
+type FullOptions = OptionsOfColor | OptionsOfMarkdown;
+export function style(text: string, options: FullOptions) {
     if (text.length === 0) {
         return text;
     }
