@@ -9,10 +9,14 @@ function getEffects(effectList: Array<keyof typeof effects>) {
     return effectList.map(effect => effects[effect]).join('');
 }
 
+export type FontColors = keyof typeof fontColors;
+export type BackgroundColors = keyof typeof backgroundColors;
+export type Effects = keyof typeof effects;
+
 export type OptionsOfColor = {
-    font?: keyof typeof fontColors,
-    background?: keyof typeof backgroundColors,
-    effects?: Array<keyof typeof effects>,
+    font?: FontColors,
+    background?: BackgroundColors,
+    effects?: Array<Effects>,
 }
 export function color(text: string, options?: OptionsOfColor): string {
     const preparedText = text.replace(/ё/g, 'е');
